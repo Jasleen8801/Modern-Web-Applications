@@ -1,0 +1,90 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+#navigation{
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 50px;
+}
+
+#navigation ul{
+  list-style-type: none;
+  box-shadow: 0px 0px 10px 5px aqua;
+}
+
+#navigation ul li{
+  display: inline-block;
+  padding: 15px 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#navigation ul li:hover{
+  background-color: aqua;
+}
+
+#navigation ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+#navigation ul li a:hover{
+  color: black;
+}
+
+.rSection {
+  margin: 40px 100px;
+}
+
+h2 {
+  color: aqua;
+  border-bottom: 2px solid aqua;
+  padding-bottom: 5px;
+}
+
+h3 {
+  margin-top: 10px;
+  color: #00FFFF; 
+}
+
+h6 {
+  color: #00CED1;
+  font-size: medium; 
+}
+
+span{
+  color: #0a8a8a; 
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+span {
+  font-weight: bold;
+  color: #00FFFF; 
+}
+
+#Skills ul li{
+  margin: 10px 0px;
+}
