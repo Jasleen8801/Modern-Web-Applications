@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms in HTML</title>
+  </head>
+  <body>
+    <h1>Forms in HTML</h1>
+    <form action="" method="post">
+      <label for="fname">First Name:</label> <br>
+      <input type="text" id="fname" name="fname" required> <br>
+      <label for="lname">Last Name:</label> <br>
+      <input type="text" id="lname" name="lname" required> <br>
+
+      <p>Choose the language</p>
+      <input type="radio" id="english" name="language" value="english">
+      <label for="english">English</label> <br>
+      <input type="radio" id="hindi" name="language" value="hindi">
+      <label for="hindi">Hindi</label> <br>
+      <input type="radio" id="gujarati" name="language" value="gujarati">
+      <label for="gujarati">Gujarati</label> <br>
+
+      <p>Choose the hobby</p>
+      <input type="checkbox" id="cricket" name="hobby" value="cricket">
+      <label for="cricket">Cricket</label> <br>
+      <input type="checkbox" id="football" name="hobby" value="football">
+      <label for="football">Football</label> <br>
+      <input type="checkbox" id="hockey" name="hobby" value="hockey">
+      <label for="hockey">Hockey</label> <br>
+
+      <label for="country">Country:</label> <br>
+      <select id="country" name="country">
+        <option value="india">India</option>
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+      </select> <br>
+
+      <label for="message">Message:</label> <br>
+      <textarea id="message" name="message" rows="4" cols="50"></textarea> <br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

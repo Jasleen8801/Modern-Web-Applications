@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Combinator Selectors</title>
+  <style>
+    article~p {
+      /*General Sibling Selectors */
+      background-color: red;
+    }
+
+    article>p {
+      /*Child Selectors - direct children */
+      background-color: yellow;
+    }
+
+    article p {
+      /*Descendant Selectors - indirect and direct children*/
+      color: green;
+    }
+
+    article+p {
+      /*Adjacent Sibling Selectors */
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <h2>Combinator Selectors</h2>
+    <p>Text inside p tag</p>
+    <div>
+      <p>Text inside div tag</p>
+    </div>
+  </article>
+  <p>Text outside article tag</p>
+  <p>Text outside article tag</p>
+</body>
+
+</html>

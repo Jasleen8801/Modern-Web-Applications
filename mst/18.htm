@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Positioning Properties</title>
+  <style>
+    body {
+      margin: 0px;
+      height: 0px;
+    }
+    div {
+      font-size: 18px;
+      font-weight: bold;
+      height: 25px;
+    }
+    .parent {
+      background-color: yellow;
+      height: 120px;
+      border: 3px solid black;
+      position: relative;
+    }
+    .red {
+      background-color: red;
+      position: relative;
+      left: 20px;
+      top: 15px;
+    }
+    .blue {
+      background-color: blue;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+    }
+    .green {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">Parent
+    <div class="red">Red</div>
+    <div class="blue">Blue</div>
+    <div class="green">Green</div>
+  </div>
+</body>
+</html>

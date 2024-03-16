@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Contact Form</title>
+  <style>
+    body {
+      background-color: yellow
+    }
+
+    form {
+      border: 10px solid orange;
+      height: 500px;
+      width: 450px;
+      padding: 10px;
+
+    }
+
+    h2 {
+      text-align: center;
+      font-family: Cambria;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 20px;
+      padding: 5px;
+    }
+
+    input[type=text],
+    [type=email] {
+      width: 80%;
+      height: 25px;
+      border: 3px solid red;
+      border-radius: 10px;
+      background-color: khaki;
+      font-size: 18px;
+      color: darkblue;
+    }
+
+    select {
+
+      width: 80%;
+      height: 35px;
+      border: 3px solid red;
+      border-radius: 10px;
+      background-color: khaki;
+      font-size: 18px;
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    input[type=submit] {
+      width: 150px;
+      height: 30px;
+      font-weight: bold;
+      font-size: 20px;
+      border: 3px solid red;
+      background-color: khaki;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Contact Form</h2>
+  <form action="">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    <label for="father">Father</label>
+    <input type="text" name="father" id="father" required>
+    <br><br>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+    <br><br>
+    <label for="city">Select the city where you live</label>
+    <select id="city" name="city">
+      <option value="Amritsar">Amritsar</option>
+      <option value="Bathinda">Bathinda</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Delhi">Delhi</option>
+    </select>
+    <br><br>
+    <p>Select the Gender:</p>
+    <input type="radio" name="gender" id="option-1" value="Male" checked>
+    <label for="option-1">Male</label>
+    <input type="radio" name="gender" id="option-2" value="Female">
+    <label for="option-2">Female</label>
+    <br><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>

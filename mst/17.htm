@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Page Layout</title>
+    <style>
+      body{
+        background-color: gray;
+        margin: 0px;
+        padding: 0px;
+      }
+      .container > .header{
+        border-bottom: 1px solid red;
+        height: 50px;
+      }
+      .container > .menubar{
+        border-bottom: 1px solid red;
+        height: 80px;
+      }
+      .container > .content {
+        border-bottom: 1px solid red;
+        height: 400px;
+        display: flex;
+      }
+      .content > .left{
+        flex: 1;
+        margin: auto;
+        text-align: center;
+      }
+      .content > .right{
+        flex: 2;
+        border-left: 1px solid red;
+        margin: auto;
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Welcome</h2>
+      </div>
+      <div class="menubar">MenuBar</div>
+      <div class="content">
+        <div class="left">Left Area</div>
+        <div class="right">Right Area</div>
+      </div>
+    </div>
+    <div class="footer">Footer</div>
+  </body>
+</html>
