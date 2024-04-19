@@ -1,0 +1,159 @@
+<!-- Form Designing using Bootstrap -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#content" aria-controls="content" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="content">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Action</a></li>
+              <li><a href="#" class="dropdown-item">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#" class="dropdown-item">Something else here</a></li>
+            </ul>
+          </li>
+          <form action="" role="search" class="d-flex">
+            <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <p class="h1">Form Designing using Bootstrap</p>
+    <form action="">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label for="exampleCheck1" class="form-check-label">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div style="height: 30px;"></div>
+    <p class="h1">Spinner</p>
+    <div class="spinner-border m-5" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div style="height: 30px;"></div>
+    <p class="h1">Alert</p>
+    <div class="alert alert-primary" role="alert">
+      A simple primary alert—check it out!
+    </div>
+    <div style="height: 30px;"></div>
+    <p class="h1">Badges</p>
+    <span class="badge text-bg-secondary px-3 py-2">New</span>
+    <button type="button" class="btn btn-primary position-relative">
+      Inbox
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        99+ 
+        <span class="visually-hidden">unread messages</span>
+      </span>
+    </button>
+    <button class="btn btn-primary position-relative ms-3" type="button">
+      Profile
+      <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+        <span class="visually-hidden">New Alerts</span>
+      </span>
+    </button>
+    <div style="height: 30px;"></div>
+    <p class="h1">Breadcrumb</p>
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+      </ol>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Library</li>
+      </ol>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div style="height: 30px;"></div>
+  <p class="h1">Carousel</p>
+  <div class="carousel slide carousel-fade" id="carousel" data-bs-ride="true">
+    <!-- check autoplay -->
+    <div class="carousel-indicators">
+      <button class="active" type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="https://via.placeholder.com/800x400?text=Slide+1" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First Slide Label</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto earum illum dolorem! Autem, mollitia animi aperiam sunt, libero, dolorum nihil itaque architecto at dicta deleniti. Minima quidem quia commodi perferendis.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="https://via.placeholder.com/800x400?text=Slide+2" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second Slide Label</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto earum illum dolorem! Autem, mollitia animi aperiam sunt, libero, dolorum nihil itaque architecto at dicta deleniti. Minima quidem quia commodi perferendis.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/800x400?text=Slide+3" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third Slide Label</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto earum illum dolorem! Autem, mollitia animi aperiam sunt, libero, dolorum nihil itaque architecto at dicta deleniti. Minima quidem quia commodi perferendis.</p>
+        </div>  
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="pre">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- Now to be done: Modals, Toasts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
