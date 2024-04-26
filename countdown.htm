@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body{
+      margin: 0;
+      background-color: black;
+    }
+
+    p{
+      background-color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      height: 70px;
+      width: 200px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <p id="countdown">10:00</p>
+  <script>
+    const starting = 10;
+    let time = starting * 60;
+
+    const countdownEl = document.getElementById('countdown');
+
+    const updateCountdown = () => {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      countdownEl.innerHTML = `${minutes}:${seconds}`;
+      time--;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>

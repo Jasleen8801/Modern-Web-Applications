@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <style>
+    body{
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: hsl(0, 0%, 95%);
+    }
+
+    button{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: none;
+      background-color: hsl(0, 0%, 30%);
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover{
+      background-color: hsl(0, 0%, 40%);
+    }
+
+    button:active{
+      background-color: hsl(0, 0%, 50%);
+    }
+
+    #keys{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 25px;
+    }
+
+    #calculator{
+      background-color: hsl(0, 0%, 15%);
+      border-radius: 15 px;
+      max-width: 500px;
+      overflow: hidden;
+    }
+
+    #display {
+      width: 100%;
+      padding: 20px;
+      font-size: 5rem;
+      text-align: left;
+      border: none; 
+      background-color: hsl(0, 0%, 20%);
+      color: white;
+    }
+
+    .op_btn{
+      background-color: hsl(39, 100%, 55%);
+    }
+
+    .op_btn:hover{
+      background-color: hsl(35, 100%, 65%);
+    }
+
+    .op_btn:active{
+      background-color: hsl(35, 100%, 75%);
+    }
+  </style>
+</head>
+<body>
+  <div id="calculator">
+    <input id="display" readonly>
+    <div id="keys">
+      <button onclick="appendToDisplay('+')" class="op_btn">+</button>
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="appendToDisplay('-')" class="op_btn">-</button>
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('*')" class="op_btn">*</button>
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="appendToDisplay('/')" class="op_btn">/</button>
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="clearDisplay()" class="op_btn">C</button>
+    </div>
+  </div>
+  
+  <script>
+    const display = document.getElementById('display');
+    let expression = '';
+    stack = [];
+
+    function appendToDisplay(value){
+      expression += value;
+      display.value = expression;
+    }
+
+    function calculate(){
+      try{
+        let result = 0, operator = '', number = '';
+
+        for(let i = 0; i < expression.length; i++){
+          if(expression[i] === '+' || expression[i] === '-' || expression[i] === '*' || expression[i] === '/'){
+            if(operator === ''){
+              operator = expression[i];
+              stack.push(parseFloat(number));
+              number = '';
+            }else{
+              if(operator === '+')
+                stack.push(parseFloat(number));
+              else if(operator === '-')
+                stack.push(parseFloat(number) * -1);
+              else if(operator === '*')
+                stack.push(stack.pop() * parseFloat(number));
+              else if(operator === '/')
+                stack.push(stack.pop() / parseFloat(number));
+              operator = expression[i];
+              number = '';
+            }
+          }else
+            number += expression[i];
+        }
+
+        if(operator === '+')
+          stack.push(parseFloat(number));
+        else if(operator === '-')
+          stack.push(parseFloat(number) * -1);
+        else if(operator === '*')
+          stack.push(stack.pop() * parseFloat(number));
+        else if(operator === '/'){
+          if(parseFloat(number) === 0) throw new Error('Division by zero');
+          stack.push(stack.pop() / parseFloat(number));
+        }
+
+        for(let i = 0; i < stack.length; i++)
+          result += stack[i];
+
+        display.value = result;
+        expression = result;
+        stack = [];
+      }catch(e){
+        display.value = 'Error';
+        expression = '';
+        stack = [];
+      }
+    }
+
+    function clearDisplay(){
+      expression = '';
+      display.value = '';
+      stack = [];
+    }
+
+  </script>
+</body>
+</html>
