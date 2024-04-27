@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .accordion {
+      background-color: #000;
+      color: #eee;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+      border-bottom: 2px solid #f00;
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+      color: #00f;
+      font-weight: bold;
+    }
+
+    .accordion::after {
+      content: '+';
+      float: right;
+    }
+
+    .active::after {
+      content: '-';
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="accordion">Section 1</button>
+    <p class="panel">Panel 1 is displayed</p>
+
+    <button class="accordion">Section 2</button>
+    <p class="panel">Panel 2 is displayed</p>
+  </div>
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for(i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        var panel = this.nextElementSibling;
+        var isActive = this.classList.toggle("active");
+
+        var panels = document.querySelectorAll('.panel');
+        panels.forEach(function(item) {
+          if (item !== panel) {
+            item.style.display = 'none';
+            item.previousElementSibling.classList.remove('active');
+          }
+        });
+
+        if (isActive) 
+          panel.style.display = "block";
+        else 
+          panel.style.display = "none";
+      });
+    }
+  </script>
+</body>
+</html>
