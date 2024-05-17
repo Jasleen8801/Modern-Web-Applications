@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
+  <style>
+    #container-form{
+      width: 250px;
+      height: 350px;
+      background: linear-gradient(45deg, blueviolet, deeppink);
+      color: white;
+      margin: 50px auto;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    h2{
+      text-align: center;
+    }
+    label{
+      font-size: 18px;
+    }
+    input[type="text"], [type="password"]{
+      width: 230px;
+    }
+    input[type="radio"]{
+      margin: 5px;
+    }
+    input[type="submit"]{
+      background: linear-gradient(45deg, blueviolet, deeppink);
+      color: white;
+      width: 230px;
+      padding: 15px 20px;
+      font-size: 18px;
+      border: 1px solid white;
+      box-shadow: 5px 5px 5px 1px blueviolet;
+    }
+    .fa{
+      font-size: 50px;
+      border: 10px solid deeppink;
+      border-radius: 50%;
+      display: block;
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      margin-top: -25px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container-form" class="animated swing">
+    <i class="fa fa-user-circle" aria-hidden="true"></i>
+    <h2>Register Here</h2>
+    <form name="myform" method="get" onsubmit="return validform();">
+      <div>
+        <label for="fname">First Name</label> <br>
+        <input type="text" name="fname" id="fname"> <br>
+        <div id="name-error" style="color: aqua;"></div>
+      </div>
+      <div>
+        <label for="passwd">Last Name</label> <br>
+        <input type="password" name="passwd" id="passwd"> <br>
+        <div id="passwd-error" style="color: aqua;"></div>
+      </div>
+      <div>
+        <label>Enter the favorite color</label> <br>
+        <input type="radio" name="color" value="RED" id="red"> RED
+        <input type="radio" name="color" value="BLUE" id="blue"> BLUE
+        <input type="radio" name="color" value="GREEN" id="green"> GREEN 
+        <div id="color-error" style="color: aqua;"></div>
+      </div>
+      <input type="submit" value="Submit"> <br>
+    </form>
+  </div>
+  <script>
+    let name = document.myform.fname.value;
+    let passwd = document.myform.passwd.value;
+    let color = document.myform.color.value;
+    let name_error = document.getElementById("name-error");
+    let passwd_error = document.getElementById("passwd-error");
+    let color_error = document.getElementById("color-error");
+    let username_pat = /^[a-zA-Z]+$/;
+    let passwd_pat = /^[a-zA-Z0-9]+$/;
+    // let flag = 0;
+
+    const validform = () => {
+      if(name="" || passwd=="" || color[0].checked == false && color[1].checked == false && color[2].checked == false){
+        alert("All fields are mandatory");
+        return false;
+      } else if(name.length<=4){
+        name_error.innerHTML = "Name should be more than 4 characters";
+        return false;
+      } else if(!name.match(username_pat)){
+        name_error.innerHTML = "Name should contain only alphabets";
+        return false;
+      } else if(passwd.length<=4){
+        passwd_error.innerHTML = "Password should be more than 4 characters";
+        return false;
+      } else if(!passwd.match(passwd_pat)){
+        passwd_error.innerHTML = "Password should contain only alphabets and numbers";
+        return false;
+      } else if(color==""){
+        color_error.innerHTML = "Please select a color";
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

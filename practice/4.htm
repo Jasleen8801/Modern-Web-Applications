@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    body{
+      background-color: yellow;
+    }
+    form{
+      border: 10px solid orange;
+      height: 500px;
+      width: 450px;
+      padding: 10px;
+    }
+    h2{
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    label{
+      font-weight: bold;
+      font-size: 20px;
+      padding: 5px;
+    }
+    input[type=text], [tye=email]{
+      width:80%;
+      height:25px;
+      border:3px solid red;
+      border-radius: 10px;
+      background-color: khaki;
+      font-size:18px;
+      color:darkblue;
+    }
+    select{
+      width:80%;
+      height:35px;
+      border:3px solid red;
+      border-radius: 10px;
+      background-color: khaki;
+      font-size:18px;
+    }
+    p{
+      font-weight: bold;
+      font-size: 18px;
+    }
+    input[type=submit]{
+      width: 150px;
+      height: 30px;
+      font-weight: bold;
+      font-size: 20px;
+      border: 3px solid red;
+      background-color: khaki;
+    }
+  </style>
+</head>
+<body>
+  <form name="myform" method="post" onsubmit="return validForm()">
+    <h2>Contact Form</h2>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <p>Enter the Gender</p>
+    <input type="radio" id="option-1" name="gender" value="Male">
+    <label for="option-1">Male</label>
+    <input type="radio" id="option-2" name="gender" value="Female">
+    <label for="option-2">Female</label>
+    <br>
+    <br>
+    <input type="submit" value="submit">
+  </form>
+  <script>
+    function validForm() {
+      let username = document.myform.name.value;
+      let gender_ = document.myform.gender;
+      let user_name_pat = /^[a-zA-Z]+$/;
+      if (username == ""){
+        alert("Name cannot be empty");
+        return false;
+      } else if (username.length<=4){
+        alert("Name should be more than 4 characters");
+        return false;
+      } else if (!username.match(user_name_pat)){
+        alert("Name should contain only alphabets");
+        return false;
+      } else if((gender_[0].checked==false) && (gender_[1].checked==false)){
+        alert("Please select gender");
+      }
+    }
+  </script>
+</body>
+</html>

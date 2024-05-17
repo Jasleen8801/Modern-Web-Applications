@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Button</title>
+  <style>
+    .container{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    .toggle-btn{
+      width: 80px;
+      height: 40px;
+      background: gray;
+      border-radius: 30px;
+      padding: 5px;
+    }
+    .toggle-btn > .inner-circle{
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border-radius: 50%;
+    }
+    .toggle-btn.active{
+      background-color: cyan;
+    }
+    .toggle-btn.active > .inner-circle{
+      margin-left: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="toggle-btn" onclick="this.classList.toggle('active')">
+      <div class="inner-circle"></div>
+    </div>
+  </div>
+</body>
+</html>
